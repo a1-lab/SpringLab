@@ -1,6 +1,9 @@
 package com.learning.config;
 
+import com.learning.filter.FilterA;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import javax.servlet.Filter;
 
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
@@ -18,7 +21,8 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
         return new String[]{"/"};
     }
 
-//    protected Filter[] getServletFilters() {
-//        return new Filter[]{new FilterA()};
-//    }
+    @Override
+    protected Filter[] getServletFilters() {
+        return new Filter[]{new FilterA()};
+    }
 }
