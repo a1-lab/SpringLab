@@ -9,9 +9,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class WebConfig extends WebMvcConfigurationSupport {
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("WEB-INF/view/");
-        resolver.setSuffix(".jsp");
-        registry.viewResolver(resolver);
+        registry.viewResolver(new InternalResourceViewResolver("WEB-INF/view/", ".jsp"));
     }
 }
